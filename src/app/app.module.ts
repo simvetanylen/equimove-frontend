@@ -6,7 +6,8 @@ import { HorsesListComponent } from './components/horses-list/horses-list.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatCommonModule, MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatCommonModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatIconModule, MatRippleModule } from '@angular/material';
+import { HorseService } from '../app/services/horse.service'
 
 const appRoutes: Routes = [
   { path: 'horses-list', component: HorsesListComponent },
@@ -35,9 +36,12 @@ const appRoutes: Routes = [
     MatCommonModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+    MatRippleModule
   ],
-  providers: [],
+  providers: [HorseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
