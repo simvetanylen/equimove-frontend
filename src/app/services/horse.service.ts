@@ -12,4 +12,17 @@ export class HorseService {
         return this._http.get<any>(`${API_URL}/horses`);
     }
 
+    public getHorse(pk) {
+    	return this._http.get<any>(`${API_URL}/horses` + pk);
+    }
+
+    public createHorse(dto) {
+    	return this._http.post<any>(`${API_URL}/horses`, dto);
+    }
+
+    public createClaimHorse(horsePk, dto) {
+    	return this._http.post<any>(`${API_URL}/horses/` + horsePk 
+    	 `/claims`, dto);
+    }
+
 }
