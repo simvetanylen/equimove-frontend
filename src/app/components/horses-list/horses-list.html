@@ -1,23 +1,24 @@
 <div>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput name="search" placeholder="Recherche" value="" [(ngModel)]="search">
+        </mat-form-field>
+    </form>
 
-    <div class="input-group">
-        <input class="form-control" placeholder="Recherche" [(ngModel)]="search">
-        <!-- <div class="input-group-addon">
-            <i class="fa fa-search"></i>
-        </div> -->
+
+    <div style="display: flex;justify-content: space-between">
+        
+        <mat-card *ngFor="let horse of filterItems(horses)" (click)="onItemClicked(horse)" style="width: 300px">
+            <img mat-card-image src="https://bransbyhorses.co.uk/app/uploads/2016/03/Sophie.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{horse.name}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
     </div>
-
-    <div class="row align-items-center" *ngFor="let horse of filterItems(horses)" style="border: 2px solid black">
-        <div class="col-4">
-            <img style="height: 75px;width:75px" src="https://bransbyhorses.co.uk/app/uploads/2016/03/Sophie.jpg" alt="..." class="rounded-circle">
-        </div>
-        <div class="col-4"> {{horse.name}}</div>
-    </div>
-
-    <!-- <div class="card" *ngFor="let horse of horses">
-        <div class="card-body">
-          This is some text within a card body. {{horse.name}}
-        </div>
-      </div> -->
 
 </div>
