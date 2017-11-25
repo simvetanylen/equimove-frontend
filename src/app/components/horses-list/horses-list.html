@@ -1,1 +1,23 @@
-<h1>Hello horses</h1>
+<div>
+
+    <div class="input-group">
+        <input class="form-control" placeholder="Recherche" [(ngModel)]="search">
+        <!-- <div class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </div> -->
+    </div>
+
+    <div class="row align-items-center" *ngFor="let horse of filterItems(horses)" style="border: 2px solid black">
+        <div class="col-4">
+            <img style="height: 75px;width:75px" src="https://bransbyhorses.co.uk/app/uploads/2016/03/Sophie.jpg" alt="..." class="rounded-circle">
+        </div>
+        <div class="col-4"> {{horse.name}}</div>
+    </div>
+
+    <!-- <div class="card" *ngFor="let horse of horses">
+        <div class="card-body">
+          This is some text within a card body. {{horse.name}}
+        </div>
+      </div> -->
+
+</div>
