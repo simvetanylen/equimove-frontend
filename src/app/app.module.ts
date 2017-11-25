@@ -7,7 +7,8 @@ import { HorsesListComponent } from './components/horses-list/horses-list.compon
 // import { NgModel } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatCommonModule, MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
 
 const appRoutes: Routes = [
   { path: 'horses-list', component: HorsesListComponent },
@@ -24,13 +25,18 @@ const appRoutes: Routes = [
     AppComponent,
     HorsesListComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    MatCommonModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
