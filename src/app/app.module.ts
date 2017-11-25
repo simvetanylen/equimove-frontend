@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './components/app/app.component';
 import { HorsesListComponent } from './components/horses-list/horses-list.component';
+import { HorseComponent } from './components/horse/horse.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   { path: 'horses-list', component: HorsesListComponent },
+  { path: 'horse', component: HorseComponent},
   {
     path: '',
     redirectTo: '/horses-list',
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HorsesListComponent
+    HorsesListComponent,
+    HorseComponent
   ],
   imports: [    
     BrowserModule,

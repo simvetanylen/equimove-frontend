@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HorseService } from '../../services/horse.service';
+import {HorseService} from '../../services/horse.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'horses-list',
@@ -7,12 +8,12 @@ import { HorseService } from '../../services/horse.service';
   //   styleUrls: ['./app.component.css']
 })
 export class HorsesListComponent {
-
   search: string
-  horses: Array<{ name: string }>
+  // horses: Observable<any>
+  horses: Array<any>
   constructor(private horseService: HorseService) {
-    this.horses = [{ name: "Val du lac" }, { name: "Fortune " }, { name: "Val du lac" }]
-    // this.horses = this._groupHorses(this.horses)
+    // horseService.getHorses().subscribe(horses => this.horses = horses);
+    this.horses = [{name: "Val du"}, {name: "Val du tutu"}, {name: "Fortune"}]
   }
 
   // _groupHorses(horses:Array<any>) {
